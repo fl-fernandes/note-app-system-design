@@ -148,3 +148,9 @@ All the above endpoints require authorization, which will be done via access tok
 * The web server will be implemented in an object-oriented programming language such as Java.
 * Considering that the web server will be part of a microservices architecture, it should be exposed under an API gateway or reverse proxy.
 * The API gateway should be responsible for service discovery, WAF (Web Application Firewall) protection, rate limiting and load balancing. So, all those things are out of the scope of the web server responsibilities.
+
+# Improvements for the plan
+
+1. Provide sequence diagrams for the interaction between user, front-end, and API.
+2. Provide an architecture diagram. 
+3. Provide a high fidelity wiremock.
