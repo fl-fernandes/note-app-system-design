@@ -22,7 +22,7 @@
   * login is required for the user to save a new note
 * the web app maintains a user session
 
-# High Level Design
+# 1. High Level Design
 
 1. The app will have a single page, called Notes, where all the content is displayed.
 2. The list of notes will be displayed in a Sidebar at the left of the screen.
@@ -35,3 +35,34 @@
 4. When the user clicks on "New" to create a new note, a temporary note will be appended to the list of notes.
 5. A note will only be persisted into the database when the user hits the save button.
 6. If the note is temporary and the user hits the delete button, the note will simply be removed from the rendered list of notes.
+
+# 3. Data Model
+
+The database system chosen for the note app is the Object-Oriented Database (OOD). 
+
+The relevant pros are:
+
+* Easy to save and recover data quickly, having better performance over an SQL solution.
+* Easier to integrate with object-oriented programming languages such as Java.
+
+The data model is described as follows:
+
+```json
+{
+  "user": {
+    "id": "string",
+    "notes": [
+      {
+        "id": "string",
+        "title": "string",
+        "content": "string",
+        "createdAt": "string",
+        "updatedAt": "string"
+      },
+    ]
+  }
+}
+```
+
+(note that defining the exact fields for the `user` object is out of the scope of this design).
+
