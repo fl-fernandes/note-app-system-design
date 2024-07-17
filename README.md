@@ -66,3 +66,69 @@ The data model is described as follows:
 
 (note that defining the exact fields for the `user` object is out of the scope of this design).
 
+# 4. Restful API
+
+Below are described all the required endpoints for the restful API, along with their verbs, request body, request headers, response body, and success response status. Error response statuses are out of the scope.
+
+Get all notes
+```bash
+GET /notes-api/v1/{userId}/notes
+
+Success status: 200 OK
+Request headers:
+  "authorization"
+Request body:
+  no request body
+Response body:
+  [Array of note objects as described in the data model]
+```
+
+Create a note
+```bash
+POST /notes-api/v1/{userId}/notes
+
+Success status: 201 CREATED
+Request headers:
+  "content-type"
+  "authorization"
+Request body:
+{
+  "title": "string",
+  "content": "string"
+}
+Response body:
+  note object as described in the data model
+```
+
+Update a note
+
+```bash
+PUT /notes-api/v1/{userId}/notes/{noteId}
+
+Success status: 200 OK
+Request headers:
+  "content-type"
+  "authorization"
+Request body:
+{
+  "title": "string",
+  "content": "string"
+}
+Response body:
+  updated note object as described in the data model
+```
+
+Delete a note
+```bash
+DELETE /notes-api/v1/{userId}/notes/{noteId}
+
+Success status: 204 NO CONTENT
+Request headers:
+  "authorization"
+Request body:
+  no request body
+Response body:
+  no response body
+```
+
+All the above endpoints require authorization, which will be done via access token following the OAuth2 specification. However, this is out of the scope of this plan.
