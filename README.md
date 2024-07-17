@@ -132,3 +132,11 @@ Response body:
 ```
 
 All the above endpoints require authorization, which will be done via access token following the OAuth2 specification. However, this is out of the scope of this plan.
+
+# 5. Web Server
+
+* The web server will use HTTP over TLS (HTTPS) for secure transit of data.
+* The web server will be implemented using the MVC (Model-View-Controller) pattern.
+* The web server will be implemented in an object-oriented programming language such as Java.
+* Considering that the web server will be part of a microservices architecture, it should be exposed under an API gateway or reverse proxy.
+* The API gateway should be responsible for service discovery, WAF (Web Application Firewall) protection, rate limiting and load balancing. So, all those things are out of the scope of the web server responsibilities.
