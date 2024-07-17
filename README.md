@@ -36,6 +36,14 @@
 5. A note will only be persisted into the database when the user hits the save button.
 6. If the note is temporary and the user hits the delete button, the note will simply be removed from the rendered list of notes.
 
+# 2. Web App UI
+
+A wireframe design of the app is available below. It is important to mention that, at first, no validation is required.
+
+Also note that this is a low fidelity wiremock, so colors and shapes are not a concern. 
+
+![Wiremock](./notes-app-wiremock.jpg)
+
 # 3. Data Model
 
 The database system chosen for the note app is the Object-Oriented Database (OOD). 
@@ -72,7 +80,7 @@ Below are described all the required endpoints for the restful API, along with t
 
 Get all notes
 ```bash
-GET /notes-api/v1/{userId}/notes
+GET /notes-bff/v1/{userId}/notes
 
 Success status: 200 OK
 Request headers:
@@ -85,7 +93,7 @@ Response body:
 
 Create a note
 ```bash
-POST /notes-api/v1/{userId}/notes
+POST /notes-bff/v1/{userId}/notes
 
 Success status: 201 CREATED
 Request headers:
@@ -103,7 +111,7 @@ Response body:
 Update a note
 
 ```bash
-PUT /notes-api/v1/{userId}/notes/{noteId}
+PUT /notes-bff/v1/{userId}/notes/{noteId}
 
 Success status: 200 OK
 Request headers:
@@ -120,7 +128,7 @@ Response body:
 
 Delete a note
 ```bash
-DELETE /notes-api/v1/{userId}/notes/{noteId}
+DELETE /notes-bff/v1/{userId}/notes/{noteId}
 
 Success status: 204 NO CONTENT
 Request headers:
